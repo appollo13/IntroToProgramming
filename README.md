@@ -1,5 +1,19 @@
 # IntroToProgramming
-Intro To Programming on Java
+**Intro To Programming in Java**
+
+
+##Overview
+Intro to Programming + OOP that happens to be in Java
+  - Language Basics
+  - Algorithms
+  - Data Structures
+  - Clean Code
+  - Design Patterns
+  - _[OPT] Effective Java_
+  - **[NOT] Concurrency** 
+
+
+##Details
 
 ###1. General Programming info. OOP (imperative) vs. Functional (declarative) programming
   - https://en.wikipedia.org/wiki/Computer_programming
