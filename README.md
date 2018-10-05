@@ -29,5 +29,8 @@ Intro to Programming + OOP that happens to be in Java
   - https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html - ALL
   - https://www.programiz.com/java-programming/operator-precedence - no OOP, no Arrays
 
-###4. _tbd..._
-Test Line
+###4. Basic mathematical concepts
+  - task: Count the number of digits in an integer, for a given integer
+  - task: Calculate n! (https://en.wikipedia.org/wiki/Factorial), for a given n
+  - task: Calculate LCD (https://en.wikipedia.org/wiki/Lowest_common_denominator), for given n and m
+  - task: Calculate GCD (https://en.wikipedia.org/wiki/Greatest_common_divisor), for given n and m
