@@ -19,4 +19,10 @@ public class BasicTest {
 
         // then
     }
+
+    @Test
+    public void count_number_of_digits(){
+        Assert.assertEquals(4, countNumberOfDigits(1234));
+    }
+
 }

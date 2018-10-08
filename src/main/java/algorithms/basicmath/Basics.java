@@ -15,22 +15,18 @@ public class Basics {
             179, 181, 191, 193, 197, 199};
 
     public static void main(String[] args) {
-        // System.out.println(countNumberOfDigits(555));
         //System.out.println("Facotrial is:  "+factorial(17));
-        System.out.println(greatestCommonDivisorOfTwoNumbers(54, 24));
+//        System.out.println(greatestCommonDivisorOfTwoNumbers(54, 24));
     }
 
-    public static String countNumberOfDigits(int providedInteger) {
-        String result = null;
+    public static int countNumberOfDigits(int providedInteger) {
+        int result = 1;
 
-        if (providedInteger <= 9) {
-            result = "ther is 1 digit in the number";
-        } else if (providedInteger >= 10 && providedInteger <= 99) {
-            result = "ther is 2 digit in the number";
-        } else if (providedInteger >= 100 && providedInteger <= 999) {
-            result = "ther is 3 digit in the number";
-        } else if (providedInteger >= 1000 && providedInteger <= 9999) {
-            result = "ther is 3 digit in the number";
+        for (int i = 0; i <= providedInteger; i++) {
+            providedInteger = providedInteger / 10;
+            if (providedInteger != 0) {
+                result++;
+            }
         }
 
         return result;
