@@ -1,7 +1,5 @@
 package algorithms.basicmath;
 
-import java.util.Arrays;
-
 /*
 4 (1.1.1) Basic mathematical concepts
 
@@ -11,6 +9,11 @@ import java.util.Arrays;
   - task: Calculate GCD (https://en.wikipedia.org/wiki/Greatest_common_divisor), for given n and m
  */
 public class Basics {
+
+    public static final int[] PRIMES = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61,
+            67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173,
+            179, 181, 191, 193, 197, 199};
+
     public static void main(String[] args) {
         // System.out.println(countNumberOfDigits(555));
         //System.out.println("Facotrial is:  "+factorial(17));
@@ -52,7 +55,7 @@ public class Basics {
         for (i = firstNumber; i >= 1; i--) {
             if (firstNumber % i != 0)
                 continue;
-            System.out.print(i+", ");
+            System.out.print(i + ", ");
         }
         System.out.println();
         for (y = secondNumber; y >= 1; y--) {
@@ -62,8 +65,8 @@ public class Basics {
             System.out.print(y + ", ");
         }
 
-        if (i==y){
-            gcd=i;
+        if (i == y) {
+            gcd = i;
         }
 
         return gcd;
