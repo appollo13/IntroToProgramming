@@ -15,17 +15,19 @@ public class Basics {
             179, 181, 191, 193, 197, 199};
 
     public static void main(String[] args) {
-        //System.out.println("Facotrial is:  "+factorial(17));
+        System.out.println("Facotrial is:  "+factorial(17));
 //        System.out.println(greatestCommonDivisorOfTwoNumbers(54, 24));
     }
 
     public static int countNumberOfDigits(int providedInteger) {
         int result = 1;
 
-        for (int i = 0; i <= providedInteger; i++) {
+        while (true) {
             providedInteger = providedInteger / 10;
             if (providedInteger != 0) {
                 result++;
+            }else {
+                break;
             }
         }
 
