@@ -1,5 +1,7 @@
 package algorithms.basicmath;
 
+import java.util.Arrays;
+
 /*
 4 (1.1.1) Basic mathematical concepts
 
@@ -10,8 +12,9 @@ package algorithms.basicmath;
  */
 public class Basics {
     public static void main(String[] args) {
-        System.out.println(countNumberOfDigits(555));
-        System.out.println("Facotrial is:  "+factorial(17));
+        // System.out.println(countNumberOfDigits(555));
+        //System.out.println("Facotrial is:  "+factorial(17));
+        System.out.println(greatestCommonDivisorOfTwoNumbers(54, 24));
     }
 
     public static String countNumberOfDigits(int providedInteger) {
@@ -38,5 +41,31 @@ public class Basics {
         }
 
         return result;
+    }
+
+    public static int greatestCommonDivisorOfTwoNumbers(int firstNumber, int secondNumber) {
+
+        int gcd = 0;
+        int i = 0;
+        int y = 0;
+
+        for (i = firstNumber; i >= 1; i--) {
+            if (firstNumber % i != 0)
+                continue;
+            System.out.print(i+", ");
+        }
+        System.out.println();
+        for (y = secondNumber; y >= 1; y--) {
+            if (secondNumber % y != 0) {
+                continue;
+            }
+            System.out.print(y + ", ");
+        }
+
+        if (i==y){
+            gcd=i;
+        }
+
+        return gcd;
     }
 }
