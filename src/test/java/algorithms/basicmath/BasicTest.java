@@ -52,4 +52,13 @@ public class BasicTest {
     public void given12And18_When_LowestCommonDivisorOfTwoNumbers_then36() {
         assertEquals(36, lowestCommonDivisorOfTwoNumbers(12, 18));
     }
+    @Test
+    public void given22And33_When_LowestCommonDivisorOfTwoNumbers_then66() {
+        assertEquals(66, lowestCommonDivisorOfTwoNumbers(22, 33));
+    }
+
+    @Test
+    public void given221And313_When_LowestCommonDivisorOfTwoNumbers_then66() {
+        assertEquals(2048*3, lowestCommonDivisorOfTwoNumbers(3, 2048));
+    }
 }

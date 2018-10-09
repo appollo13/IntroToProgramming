@@ -43,11 +43,38 @@ public class Basics {
         return result;
     }
 
+    public static int lowestCommonDivisorOfTwoNumbers(int firstNumber, int secondNumber) {
+
+        int firstResult;
+        int multiply;
+        int result = 0;
+        if (firstNumber >= secondNumber) {
+            multiply = firstNumber;
+        } else {
+            multiply = secondNumber;
+        }
+
+        for (int i = 1; i < multiply; i++) {
+            firstResult = firstNumber * i;
+            if (firstResult % secondNumber == 0) {
+                result = firstResult;
+                System.out.println("LCD is: " + result);
+                break;
+            }
+        }
+        if (result == 0) {
+            result = firstNumber * secondNumber;
+            System.out.println("LCD is: " + result);
+        }
+
+        return result;
+    }
+
     public static int greatestCommonDivisorOfTwoNumbers(int firstNumber, int secondNumber) {
 
         int results = 0;
 
-        for (int i = 0; i < firstNumber; i++) {
+        for (int i = 0; i < PRIMES.length; i++) {
             results = firstNumber / PRIMES[i];
             if (results > 0) {
                 System.out.println(results);
@@ -58,26 +85,6 @@ public class Basics {
         }
 
         return firstNumber;
-    }
-
-    public static int lowestCommonDivisorOfTwoNumbers(int firstNumber, int secondNumber) {
-
-        int firstResult;
-        int seckondResult;
-        int result = 0;
-
-
-        for (int i = 1; i <10 ; i++) {
-            firstResult=firstNumber*i;
-            if (firstResult%secondNumber==0){
-                result = firstResult;
-                System.out.println("LCD is: " + result);
-                break;
-            }
-
-        }
-
-        return result;
     }
 }
 
