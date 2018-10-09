@@ -4,8 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import static algorithms.basicmath.Basics.countNumberOfDigits;
-import static algorithms.basicmath.Basics.factorial;
+import static algorithms.basicmath.Basics.*;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(JUnit4.class)
@@ -30,12 +29,27 @@ public class BasicTest {
     public void given7_whenFactorial_then5040() {
         assertEquals(5040, factorial(7));
     }
+
     @Test
     public void given10_whenFactorial_then3628800() {
         assertEquals(3628800, factorial(10));
     }
+
     @Test
     public void given17_whenFactorial_then5040() {
         assertEquals(355687428096000L, factorial(17));
+    }
+
+    @Test
+    public void given15And6_When_LowestCommonDivisorOfTwoNumbers_then30() {
+        assertEquals(30, lowestCommonDivisorOfTwoNumbers(15, 6));
+    }
+    @Test
+    public void given10And6_When_LowestCommonDivisorOfTwoNumbers_then30() {
+        assertEquals(30, lowestCommonDivisorOfTwoNumbers(10, 6));
+    }
+    @Test
+    public void given12And18_When_LowestCommonDivisorOfTwoNumbers_then36() {
+        assertEquals(36, lowestCommonDivisorOfTwoNumbers(12, 18));
     }
 }

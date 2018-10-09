@@ -15,8 +15,7 @@ public class Basics {
             179, 181, 191, 193, 197, 199};
 
     public static void main(String[] args) {
-        System.out.println("Facotrial is:  "+factorial(17));
-//        System.out.println(greatestCommonDivisorOfTwoNumbers(54, 24));
+        System.out.println(greatestCommonDivisorOfTwoNumbers(54, 24));
     }
 
     public static int countNumberOfDigits(int providedInteger) {
@@ -26,7 +25,7 @@ public class Basics {
             providedInteger = providedInteger / 10;
             if (providedInteger != 0) {
                 result++;
-            }else {
+            } else {
                 break;
             }
         }
@@ -46,27 +45,39 @@ public class Basics {
 
     public static int greatestCommonDivisorOfTwoNumbers(int firstNumber, int secondNumber) {
 
-        int gcd = 0;
-        int i = 0;
-        int y = 0;
+        int results = 0;
 
-        for (i = firstNumber; i >= 1; i--) {
-            if (firstNumber % i != 0)
+        for (int i = 0; i < firstNumber; i++) {
+            results = firstNumber / PRIMES[i];
+            if (results > 0) {
+                System.out.println(results);
                 continue;
-            System.out.print(i + ", ");
-        }
-        System.out.println();
-        for (y = secondNumber; y >= 1; y--) {
-            if (secondNumber % y != 0) {
-                continue;
+            } else {
+                System.out.println(PRIMES[i]);
             }
-            System.out.print(y + ", ");
         }
 
-        if (i == y) {
-            gcd = i;
+        return firstNumber;
+    }
+
+    public static int lowestCommonDivisorOfTwoNumbers(int firstNumber, int secondNumber) {
+
+        int firstResult;
+        int seckondResult;
+        int result = 0;
+
+
+        for (int i = 1; i <10 ; i++) {
+            firstResult=firstNumber*i;
+            if (firstResult%secondNumber==0){
+                result = firstResult;
+                System.out.println("LCD is: " + result);
+                break;
+            }
+
         }
 
-        return gcd;
+        return result;
     }
 }
+
