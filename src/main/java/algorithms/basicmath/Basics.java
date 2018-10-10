@@ -15,7 +15,10 @@ public class Basics {
             179, 181, 191, 193, 197, 199};
 
     public static void main(String[] args) {
-        System.out.println(greatestCommonDivisorOfTwoNumbers(54, 24));
+        int[] gcd = greatestCommonDivisorOfTwoNumbers(48,180 );
+        for (int i = 0; i < gcd.length; i++) {
+            System.out.println(gcd[i]);
+        }
     }
 
     public static int countNumberOfDigits(int providedInteger) {
@@ -70,21 +73,47 @@ public class Basics {
         return result;
     }
 
-    public static int greatestCommonDivisorOfTwoNumbers(int firstNumber, int secondNumber) {
+    public static int[] greatestCommonDivisorOfTwoNumbers(int firstNumber, int secondNumber) {
 
-        int results = 0;
+        int[] firstNumberArray;
+        int[] secondNumberArray;
+        firstNumberArray = extractCommonMultipliers(firstNumber);
+        secondNumberArray = extractCommonMultipliers(secondNumber);
+        int arrayLength = firstNumberArray.length;
+
+        if (firstNumberArray.length < secondNumberArray.length) {
+            arrayLength = secondNumberArray.length;
+        }
+        int[] results = new int[arrayLength];
+
+        for (int i = 0; i < arrayLength; i++) {
+            if (firstNumberArray[i] == secondNumberArray[i]) {
+                results[i] = firstNumberArray[i];
+                if (firstNumberArray[i] == 0 && secondNumberArray[i] == 0) {
+                    break;
+                }
+            }
+        }
+        return results;
+    }
+
+    static int[] extractCommonMultipliers(int number) {
+        int[] arrayOfMultipliers = new int[number];
+        int localNumber = number;
+        int count = 0;
 
         for (int i = 0; i < PRIMES.length; i++) {
-            results = firstNumber / PRIMES[i];
-            if (results > 0) {
-                System.out.println(results);
-                continue;
-            } else {
-                System.out.println(PRIMES[i]);
+            while (localNumber % PRIMES[i] == 0) {
+
+                localNumber = localNumber / PRIMES[i];
+                arrayOfMultipliers[count] = PRIMES[i];
+                count++;
             }
         }
 
-        return firstNumber;
+        for (int i = 0; i < arrayOfMultipliers.length; i++) {
+        }
+        return arrayOfMultipliers;
     }
 }
 
