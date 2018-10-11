@@ -41,24 +41,27 @@ public class BasicTest {
     }
 
     @Test
-    public void given15And6_When_LowestCommonDivisorOfTwoNumbers_then30() {
-        assertEquals(30, lowestCommonDivisorOfTwoNumbers(15, 6));
-    }
-    @Test
-    public void given10And6_When_LowestCommonDivisorOfTwoNumbers_then30() {
-        assertEquals(30, lowestCommonDivisorOfTwoNumbers(10, 6));
-    }
-    @Test
-    public void given12And18_When_LowestCommonDivisorOfTwoNumbers_then36() {
-        assertEquals(36, lowestCommonDivisorOfTwoNumbers(12, 18));
-    }
-    @Test
-    public void given22And33_When_LowestCommonDivisorOfTwoNumbers_then66() {
-        assertEquals(66, lowestCommonDivisorOfTwoNumbers(22, 33));
+    public void given15And6_When_LowestCommonDivisor_then30() {
+        assertEquals(30, lowestCommonDivisor(15, 6));
     }
 
     @Test
-    public void given221And313_When_LowestCommonDivisorOfTwoNumbers_then66() {
-        assertEquals(2048*3, lowestCommonDivisorOfTwoNumbers(3, 2048));
+    public void given10And6_When_LowestCommonDivisor_then30() {
+        assertEquals(30, lowestCommonDivisor(10, 6));
+    }
+
+    @Test
+    public void given12And18_When_LowestCommonDivisor_then36() {
+        assertEquals(36, lowestCommonDivisor(12, 18));
+    }
+
+    @Test
+    public void given22And33_When_LowestCommonDivisor_then66() {
+        assertEquals(66, lowestCommonDivisor(22, 33));
+    }
+
+    @Test
+    public void given221And313_When_LowestCommonDivisor_then66() {
+        assertEquals(2048 * 3, lowestCommonDivisor(3, 2048));
     }
 }

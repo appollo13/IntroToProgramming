@@ -15,7 +15,7 @@ public class Basics {
             179, 181, 191, 193, 197, 199};
 
     public static void main(String[] args) {
-        int[] gcd = greatestCommonDivisorOfTwoNumbers(48,180 );
+        int[] gcd = greatestCommonDivisor(48, 180);
         for (int i = 0; i < gcd.length; i++) {
             System.out.println(gcd[i]);
         }
@@ -46,7 +46,7 @@ public class Basics {
         return result;
     }
 
-    public static int lowestCommonDivisorOfTwoNumbers(int firstNumber, int secondNumber) {
+    public static int lowestCommonDivisor(int firstNumber, int secondNumber) {
 
         int firstResult;
         int multiply;
@@ -73,7 +73,7 @@ public class Basics {
         return result;
     }
 
-    public static int[] greatestCommonDivisorOfTwoNumbers(int firstNumber, int secondNumber) {
+    public static int[] greatestCommonDivisor(int firstNumber, int secondNumber) {
 
         int[] firstNumberArray;
         int[] secondNumberArray;
