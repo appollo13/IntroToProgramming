@@ -7,7 +7,7 @@ import org.junit.runners.JUnit4;
 public class DummyTest {
 
     @Test
-    public void givenDummy_whenGetPi_thenPiWithGoodPrecision() {
+    public void getPi_thenPiWithGoodPrecision() {
         // given
         Dummy dummy = new Dummy();
 
