@@ -42,7 +42,6 @@ public class Basics {
         return result;
     }
 
-
     public static int lowestCommonDivisor(int firstNumber, int secondNumber) {
         int biggestNumber;
         if (firstNumber >= secondNumber) {
@@ -62,48 +61,46 @@ public class Basics {
     }
 
     public static int greatestCommonDivisor(Integer firstNumber, Integer secondNumber) {
+        Integer[] firstNumberArray = extractCommonMultipliers(firstNumber);
+        Integer[] secondNumberArray = extractCommonMultipliers(secondNumber);
 
-        Integer[] firstNumberArray;
-        Integer[] secondNumberArray;
-        firstNumberArray = extractCommonMultipliers(firstNumber);
-        secondNumberArray = extractCommonMultipliers(secondNumber);
-        List<Integer> results = new ArrayList<>();
-        int gcd = 1;
+        int result = 1;
+
+        int i = 0;
         int j = 0;
-
-        for (int i = 0; i < firstNumberArray.length; i++) {
-            inner:
+        for (; i < firstNumberArray.length; i++) {
             for (; j < secondNumberArray.length; j++) {
+                if (firstNumberArray[i].intValue() == secondNumberArray[j].intValue()) {
+                    result *= firstNumberArray[i];
 
-                if (firstNumberArray[i] == secondNumberArray[j]) {
-                    results.add(firstNumberArray[i]);
-                    j++;
-                    break;
+                    j++;// next j
+                    break;// next i
                 }
-                break inner;
+
+                if (firstNumberArray[i] < secondNumberArray[j]) {
+                    // same j
+                    break;// next i
+//                } else {
+//                    // same i
+//                    // next j
+                }
             }
         }
-        for (int i : results) {
-            gcd *= i;
-        }
-        return gcd;
+
+        return result;
     }
 
-    static Integer[] extractCommonMultipliers(int number) {
+    private static Integer[] extractCommonMultipliers(int number) {
         List<Integer> arrayOfMultipliers = new ArrayList<>();
-        int localNumber = number;
 
-        for (int i = 0; i < PRIMES.length; i++) {
-            while (localNumber % PRIMES[i] == 0) {
-
-                localNumber = localNumber / PRIMES[i];
-                arrayOfMultipliers.add(PRIMES[i]);
+        for (int prime : PRIMES) {
+            while (number % prime == 0) {
+                number = number / prime;
+                arrayOfMultipliers.add(prime);
             }
         }
 
-        return arrayOfMultipliers.toArray(new Integer[arrayOfMultipliers.size()]);
+        return arrayOfMultipliers.toArray(new Integer[0]);
     }
-
-
 }
 

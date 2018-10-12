@@ -1,17 +1,11 @@
 package algorithms.basicmath;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 import static algorithms.basicmath.Basics.*;
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 @RunWith(JUnit4.class)
 public class BasicTest {
@@ -31,7 +25,6 @@ public class BasicTest {
     public void givenMinus12_whenCountNumberOfDigits_then2() {
         assertEquals(2, countNumberOfDigits(-12));
     }
-
 
     //Tests for finding Factorial
     @Test
@@ -61,40 +54,47 @@ public class BasicTest {
 
     //Tests for Lowest Common Divisor
     @Test
-    public void given15And6_When_LowestCommonDivisor_then30() {
+    public void given15And6_when_lowestCommonDivisor_then30() {
         assertEquals(30, lowestCommonDivisor(15, 6));
     }
 
     @Test
-    public void given10And6_When_LowestCommonDivisor_then30() {
+    public void given10And6_when_lowestCommonDivisor_then30() {
         assertEquals(30, lowestCommonDivisor(10, 6));
     }
 
     @Test
-    public void given12And18_When_LowestCommonDivisor_then36() {
+    public void given12And18_when_lowestCommonDivisor_then36() {
         assertEquals(36, lowestCommonDivisor(12, 18));
     }
 
     @Test
-    public void given22And33_When_LowestCommonDivisor_then66() {
+    public void given22And33_when_lowestCommonDivisor_then66() {
         assertEquals(66, lowestCommonDivisor(22, 33));
     }
 
     @Test
-    public void given221And313_When_LowestCommonDivisor_then66() {
+    public void given221And313_when_lowestCommonDivisor_then6144() {
         assertEquals(2048 * 3, lowestCommonDivisor(3, 2048));
     }
 
     //Tests for Greater Common Divisor
 
     @Test
-    public void given48And180_When_greatestCommonDivisor_Then12(){
-        assertEquals(12,greatestCommonDivisor(48,180));
+    public void given48And180_when_greatestCommonDivisor_then12() {
+        assertEquals(12, greatestCommonDivisor(48, 180));
+        assertEquals(12, greatestCommonDivisor(180, 48));
     }
 
     @Test
-    public void given180And48_When_greatestCommonDivisor_Then12(){
-        assertEquals(12,greatestCommonDivisor(180,48));
+    public void given1024And512_when_greatestCommonDivisor_then512() {
+        assertEquals(512, greatestCommonDivisor(1024, 512));
+        assertEquals(512, greatestCommonDivisor(512, 1024));
     }
 
+    @Test
+    public void given2And3_when_greatestCommonDivisor_then6() {
+        assertEquals(1, greatestCommonDivisor(2, 3));
+        assertEquals(1, greatestCommonDivisor(3, 2));
+    }
 }
