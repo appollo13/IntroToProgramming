@@ -7,11 +7,6 @@ import java.util.*;
 @Slf4j
 public class TopNWords {
 
-    public static void main(String[] args) {
-        String s = "a a b c a b d e n i k o l a e m k o";
-        List<String> topNWords_1 = getTopNWords(3, s, true);
-    }
-
     public static List<String> getTopNWords(int n, String s, boolean strict) {
         if (s == null || s.trim().isEmpty() || n < 1) {
             return Collections.emptyList();
