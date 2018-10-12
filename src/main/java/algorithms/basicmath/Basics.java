@@ -1,5 +1,8 @@
 package algorithms.basicmath;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 4 (1.1.1) Basic mathematical concepts
 
@@ -73,23 +76,18 @@ public class Basics {
         return result;
     }
 
-    public static int[] greatestCommonDivisor(int firstNumber, int secondNumber) {
+    public static int[] greatestCommonDivisor(Integer firstNumber, Integer secondNumber) {
 
-        int[] firstNumberArray;
-        int[] secondNumberArray;
+        Integer[] firstNumberArray;
+        Integer[] secondNumberArray;
         firstNumberArray = extractCommonMultipliers(firstNumber);
         secondNumberArray = extractCommonMultipliers(secondNumber);
-        int arrayLength = firstNumberArray.length;
+        int[] results = new int[firstNumberArray.length];
 
-        if (firstNumberArray.length < secondNumberArray.length) {
-            arrayLength = secondNumberArray.length;
-        }
-        int[] results = new int[arrayLength];
-
-        for (int i = 0; i < arrayLength; i++) {
-            if (firstNumberArray[i] == secondNumberArray[i]) {
-                results[i] = firstNumberArray[i];
-                if (firstNumberArray[i] == 0 && secondNumberArray[i] == 0) {
+        for (int i = 0; i < firstNumberArray.length; i++) {
+            for (int j = 0; j < secondNumberArray.length; j++) {
+                if (firstNumberArray[i] == secondNumberArray[j]) {
+                    results[i] = firstNumberArray[i];
                     break;
                 }
             }
@@ -97,23 +95,19 @@ public class Basics {
         return results;
     }
 
-    static int[] extractCommonMultipliers(int number) {
-        int[] arrayOfMultipliers = new int[number];
+    static Integer[] extractCommonMultipliers(int number) {
+        List<Integer> arrayOfMultipliers = new ArrayList<>();
         int localNumber = number;
-        int count = 0;
 
         for (int i = 0; i < PRIMES.length; i++) {
             while (localNumber % PRIMES[i] == 0) {
 
                 localNumber = localNumber / PRIMES[i];
-                arrayOfMultipliers[count] = PRIMES[i];
-                count++;
+                arrayOfMultipliers.add(PRIMES[i]);
             }
         }
 
-        for (int i = 0; i < arrayOfMultipliers.length; i++) {
-        }
-        return arrayOfMultipliers;
+        return arrayOfMultipliers.toArray(new Integer[arrayOfMultipliers.size()]);
     }
 }
 
