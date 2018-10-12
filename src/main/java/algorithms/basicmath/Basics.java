@@ -35,38 +35,30 @@ public class Basics {
     public static long factorial(int factorialNumber) {
         long result = 1;
 
-        for (long i = factorialNumber; i >= 1; i--) {
+        for (long i = factorialNumber; i > 1; i--) {
             result *= i;
         }
 
         return result;
     }
 
-    public static int lowestCommonDivisor(int firstNumber, int secondNumber) {
 
-        int firstResult;
-        int multiply;
-        int result = 0;
+    public static int lowestCommonDivisor(int firstNumber, int secondNumber) {
+        int biggestNumber;
         if (firstNumber >= secondNumber) {
-            multiply = firstNumber;
+            biggestNumber = firstNumber;
         } else {
-            multiply = secondNumber;
+            biggestNumber = secondNumber;
         }
 
-        for (int i = 1; i < multiply; i++) {
-            firstResult = firstNumber * i;
-            if (firstResult % secondNumber == 0) {
-                result = firstResult;
-                System.out.println("LCD is: " + result);
-                break;
+        for (int i = 1; i <= biggestNumber; i++) {
+            int result = firstNumber * i;
+            if (result % secondNumber == 0) {
+                return result;
             }
         }
-        if (result == 0) {
-            result = firstNumber * secondNumber;
-            System.out.println("LCD is: " + result);
-        }
 
-        return result;
+        throw new RuntimeException("Impossible !!!");
     }
 
     public static int greatestCommonDivisor(Integer firstNumber, Integer secondNumber) {

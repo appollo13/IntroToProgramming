@@ -35,6 +35,16 @@ public class BasicTest {
 
     //Tests for finding Factorial
     @Test
+    public void given0_whenFactorial_then1() {
+        assertEquals(1, factorial(0));
+    }
+
+    @Test
+    public void given1_whenFactorial_then1() {
+        assertEquals(1, factorial(1));
+    }
+
+    @Test
     public void given7_whenFactorial_then5040() {
         assertEquals(5040, factorial(7));
     }
