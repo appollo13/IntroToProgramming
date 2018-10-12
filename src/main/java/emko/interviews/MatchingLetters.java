@@ -32,7 +32,6 @@ public class MatchingLetters {
 
             letterToCount.put(letter, ++count);
         }
-        System.out.println(letterToCount);
         log.debug(letterToCount.toString());
 
         int result = 0;
