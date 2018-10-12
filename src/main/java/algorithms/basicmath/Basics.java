@@ -17,13 +17,6 @@ public class Basics {
             67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173,
             179, 181, 191, 193, 197, 199};
 
-    public static void main(String[] args) {
-        int[] gcd = greatestCommonDivisor(48, 180);
-        for (int i = 0; i < gcd.length; i++) {
-            System.out.println(gcd[i]);
-        }
-    }
-
     public static int countNumberOfDigits(int providedInteger) {
         int result = 1;
 
@@ -76,23 +69,33 @@ public class Basics {
         return result;
     }
 
-    public static int[] greatestCommonDivisor(Integer firstNumber, Integer secondNumber) {
+    public static int greatestCommonDivisor(Integer firstNumber, Integer secondNumber) {
 
         Integer[] firstNumberArray;
         Integer[] secondNumberArray;
         firstNumberArray = extractCommonMultipliers(firstNumber);
         secondNumberArray = extractCommonMultipliers(secondNumber);
-        int[] results = new int[firstNumberArray.length];
+        List<Integer> results = new ArrayList<>();
+        int gcd=1;
+        int j = 0;
 
         for (int i = 0; i < firstNumberArray.length; i++) {
-            for (int j = 0; j < secondNumberArray.length; j++) {
+            inner:
+            for (; j < secondNumberArray.length; j++) {
+
                 if (firstNumberArray[i] == secondNumberArray[j]) {
-                    results[i] = firstNumberArray[i];
+                    results.add(firstNumberArray[i]);
+                    j++;
                     break;
                 }
+                break inner;
             }
         }
-        return results;
+        for(int i: results){
+            gcd *=i;
+
+        }
+        return gcd;
     }
 
     static Integer[] extractCommonMultipliers(int number) {
