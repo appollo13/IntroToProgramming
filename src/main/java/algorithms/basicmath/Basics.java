@@ -76,7 +76,7 @@ public class Basics {
         firstNumberArray = extractCommonMultipliers(firstNumber);
         secondNumberArray = extractCommonMultipliers(secondNumber);
         List<Integer> results = new ArrayList<>();
-        int gcd=1;
+        int gcd = 1;
         int j = 0;
 
         for (int i = 0; i < firstNumberArray.length; i++) {
@@ -91,9 +91,8 @@ public class Basics {
                 break inner;
             }
         }
-        for(int i: results){
-            gcd *=i;
-
+        for (int i : results) {
+            gcd *= i;
         }
         return gcd;
     }
@@ -112,5 +111,7 @@ public class Basics {
 
         return arrayOfMultipliers.toArray(new Integer[arrayOfMultipliers.size()]);
     }
+
+
 }
 
