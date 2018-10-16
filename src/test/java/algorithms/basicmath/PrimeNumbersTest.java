@@ -4,6 +4,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static algorithms.basicmath.Basics.PRIMES;
 import static algorithms.basicmath.PrimeNumbers.*;
 import static java.util.Arrays.asList;
@@ -15,9 +18,20 @@ public class PrimeNumbersTest {
 
     @Test
     public void isPrime_from1to202() {
+        List<Integer> ints = new ArrayList<>();
+
+        for (int i : PRIMES)
+            ints.add(i);
+
+//        Not Working
+//        for (int i = 1; i <= 202; i++) {
+//            boolean expected = Arrays.asList(PRIMES).contains(i);
+//            System.out.println(PRIMES[i] + "is expected to be " + expected +"->"+ i);
+
         for (int i = 1; i <= 202; i++) {
-            boolean expected = asList(PRIMES).contains(i);
-            assertEquals("" + i, expected, isPrime(i));
+            boolean expected = ints.contains(i);
+
+            assertEquals("  -> " + i, expected, isPrime(i));
         }
     }
 
@@ -50,7 +64,7 @@ public class PrimeNumbersTest {
     @Test
     public void getPrimeFactors_of320_then22335() {
         // given
-        int[] expected = new int[]{2, 2, 3, 3, 5};
+        int[] expected = new int[]{2, 2, 2, 2, 2, 2, 5};
 
         // when & then
         assertArrayEquals(expected, getPrimeFactors(320));
