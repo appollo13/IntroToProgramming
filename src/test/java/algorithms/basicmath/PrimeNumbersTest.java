@@ -9,7 +9,7 @@ import java.util.List;
 
 import static algorithms.basicmath.Basics.PRIMES;
 import static algorithms.basicmath.PrimeNumbers.*;
-import static java.util.Arrays.asList;
+import static java.util.Arrays.stream;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
@@ -29,16 +29,18 @@ public class PrimeNumbersTest {
 //            System.out.println(PRIMES[i] + "is expected to be " + expected +"->"+ i);
 
         for (int i = 1; i <= 202; i++) {
-            boolean expected = ints.contains(i);
 
-            assertEquals("  -> " + i, expected, isPrime(i));
+            int fI = i;
+            boolean expected = stream(PRIMES).anyMatch(n -> n == fI);
+            assertEquals("" + i, expected, isPrime(i));
         }
     }
 
     @Test
     public void isPrimeByTheSieveOfEratosthenes_from1to202() {
         for (int i = 1; i <= 202; i++) {
-            boolean expected = asList(PRIMES).contains(i);
+            int fI = i;
+            boolean expected = stream(PRIMES).anyMatch(n -> n == fI);
             assertEquals("" + i, expected, isPrimeByTheSieveOfEratosthenes(i));
         }
     }
