@@ -23,11 +23,6 @@ public class PrimeNumbersTest {
         for (int i : PRIMES)
             ints.add(i);
 
-//        Not Working
-//        for (int i = 1; i <= 202; i++) {
-//            boolean expected = Arrays.asList(PRIMES).contains(i);
-//            System.out.println(PRIMES[i] + "is expected to be " + expected +"->"+ i);
-
         for (int i = 1; i <= 202; i++) {
 
             int fI = i;
@@ -70,5 +65,20 @@ public class PrimeNumbersTest {
 
         // when & then
         assertArrayEquals(expected, getPrimeFactors(320));
+    }
+
+    @Test
+    public void getTheNumberOfZerosAMultiplicationEndsWith_of_0_and_10_then1() {
+        assertEquals(0, getTheNumberOfZerosAMultiplicationEndsWith(0, 10));
+    }
+
+    @Test
+    public void getTheNumberOfZerosAMultiplicationEndsWith_of_2_and_10_then1() {
+        assertEquals(1, getTheNumberOfZerosAMultiplicationEndsWith(2, 10));
+    }
+
+    @Test
+    public void getTheNumberOfZerosAMultiplicationEndsWith_of_10_and_10_then1() {
+        assertEquals(2, getTheNumberOfZerosAMultiplicationEndsWith(10, 10));
     }
 }

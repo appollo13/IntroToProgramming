@@ -47,7 +47,7 @@ public class PrimeNumbers {
                 }
             }
         }
-        for (int i = 2; i < n; i++) {
+        for (int i = 2; i <= n; i++) {
             if (!isComposite[i]) {
                 Primes.add(i);
             }
@@ -63,30 +63,41 @@ public class PrimeNumbers {
             while (n % i == 0) {
                 if (n % i != 0) {
                     break;
-                }else {
+                } else {
                     factors.add(i);
-                    n =n/i;
+                    n = n / i;
                 }
             }
-
         }
-        if(factors.size() !=0) {
+        if (factors.size() != 0) {
             int[] primeFactors = new int[factors.size()];
             for (int i = 0; i < factors.size(); i++) {
                 primeFactors[i] = factors.get(i);
-                System.out.println(primeFactors[i]);
             }
 
             return primeFactors;
-        }else{
+        } else {
             return new int[]{1};
         }
     }
 
-
     public static int getTheNumberOfZerosAMultiplicationEndsWith(int n, int... array) {
-        //TODO
-        return -1;
+        int result = n;
+
+        for (int i = 0; i < array.length; i++) {
+            result *= array[i];
+        }
+        int count = 0;
+        if (result == 0) {
+            return count;
+        } else {
+            while (result % 10 == 0) {
+                result = result / 10;
+                count++;
+            }
+        }
+
+        return count;
     }
 }
 
