@@ -59,17 +59,17 @@ public class PrimeNumbersTest {
     }
 
     @Test
-    public void getPrimeFactors_of320_then22335() {
+    public void getPrimeFactors_of180_then22335() {
         // given
-        int[] expected = new int[]{2, 2, 2, 2, 2, 2, 5};
+        int[] expected = new int[]{2, 2, 3, 3, 5};
 
         // when & then
-        assertArrayEquals(expected, getPrimeFactors(320));
+        assertArrayEquals(expected, getPrimeFactors(180));
     }
 
     @Test
     public void getTheNumberOfZerosAMultiplicationEndsWith_of_0_and_10_then1() {
-        assertEquals(0, getTheNumberOfZerosAMultiplicationEndsWith(0, 10));
+        assertEquals(0, getTheNumberOfZerosAMultiplicationEndsWith(0));
     }
 
     @Test

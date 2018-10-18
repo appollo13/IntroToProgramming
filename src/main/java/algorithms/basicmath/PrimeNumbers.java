@@ -1,7 +1,6 @@
 package algorithms.basicmath;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 /*
 5 (1.1.3) Basic mathematical concepts
@@ -14,18 +13,12 @@ import java.util.LinkedList;
 public class PrimeNumbers {
 
     public static boolean isPrime(int n) {
-
-        int count = 0;
-
         if (n == 1) {
             return false;
         }
 
-        for (int i = 1; i < n; i++) {
+        for (int i = 2; i <= n / 2; i++) {
             if (n % i == 0) {
-                count++;
-            }
-            if (count >= 2) {
                 return false;
             }
         }
@@ -33,12 +26,11 @@ public class PrimeNumbers {
     }
 
     public static boolean isPrimeByTheSieveOfEratosthenes(int n) {
-
         boolean[] isComposite = new boolean[n + 1];
-        LinkedList<Integer> Primes = new LinkedList<>();
-        int sqrt = (int) Math.sqrt(n);
+        isComposite[0] = true;
+        isComposite[1] = true;
 
-        for (int i = 2; i <= sqrt; i++) {
+        for (int i = 2; i <= n / 2; i++) {
             if (!isComposite[i]) {
                 int s = i * i;
                 while (s <= n) {
@@ -47,13 +39,8 @@ public class PrimeNumbers {
                 }
             }
         }
-        for (int i = 2; i <= n; i++) {
-            if (!isComposite[i]) {
-                Primes.add(i);
-            }
-        }
 
-        return Primes.contains(n);
+        return !isComposite[n];
     }
 
     public static int[] getPrimeFactors(int n) {
@@ -61,43 +48,38 @@ public class PrimeNumbers {
 
         for (int i = 2; i <= n; i++) {
             while (n % i == 0) {
-                if (n % i != 0) {
-                    break;
-                } else {
-                    factors.add(i);
-                    n = n / i;
-                }
+                factors.add(i);
+                n = n / i;
             }
         }
-        if (factors.size() != 0) {
-            int[] primeFactors = new int[factors.size()];
-            for (int i = 0; i < factors.size(); i++) {
-                primeFactors[i] = factors.get(i);
-            }
 
-            return primeFactors;
-        } else {
+        if (factors.size() == 0) {
             return new int[]{1};
         }
+
+        int[] primeFactors = new int[factors.size()];
+        for (int i = 0; i < factors.size(); i++) {
+            primeFactors[i] = factors.get(i);
+        }
+        return primeFactors;
     }
 
     public static int getTheNumberOfZerosAMultiplicationEndsWith(int n, int... array) {
-        int result = n;
-
+        int multi = n;
         for (int i = 0; i < array.length; i++) {
-            result *= array[i];
-        }
-        int count = 0;
-        if (result == 0) {
-            return count;
-        } else {
-            while (result % 10 == 0) {
-                result = result / 10;
-                count++;
-            }
+            multi *= array[i];
         }
 
-        return count;
+        if (multi == 0) {
+            return 0;
+        }
+
+        int result = 0;
+        while (multi % 10 == 0) {
+            multi /= 10;
+            result++;
+        }
+        return result;
     }
 }
 
