@@ -9,12 +9,32 @@ package algorithms.basicmath;
 public class NumeralSystemConversions {
 
     public static String toBaseN(int n, int number) {
-        //TODO
-        return null;
+
+        int result = 0;
+        int position = 1;
+
+        while (number > 0) {
+            int ostatyk = number % n;
+            result = result + (ostatyk * position);
+            number /= n;
+            position *= 10;
+        }
+        return String.valueOf(result);
     }
 
     public static int fromBaseN(int n, String number) {
-        //TODO
-        return 0;
+
+        int pow = 0;
+        int result = 0;
+        int rNumber = Integer.valueOf(number);
+
+        while (rNumber > 0) {
+            int ostatyk = rNumber % 10;
+            result = (int) (result + ostatyk * (Math.pow(n, pow)));
+            rNumber /= 10;
+            pow++;
+        }
+        System.out.println(result);
+        return result;
     }
 }
