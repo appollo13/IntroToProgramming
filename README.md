@@ -44,3 +44,9 @@ Intro to Programming + OOP that happens to be in Java
 ###6. Numeral system conversions
   - task: Convert a given decimal number (int, >= 0) to a BaseN numerical system, where n (> 1) is a param
   - task: Convert a given BaseN number, where n (> 1) is a param, to a decimal number
+
+###7. Recursion
+  - task: Calculate n! (https://en.wikipedia.org/wiki/Factorial), for a given n, using recursion
+  - task: Calculate Fibonacci number (https://en.wikipedia.org/wiki/Fibonacci_number), for a given n, using recursion
+  - task: Calculate LCD (https://en.wikipedia.org/wiki/Lowest_common_denominator), for given n and m, using recursion
+  - task: Calculate GCD (https://en.wikipedia.org/wiki/Greatest_common_divisor), for given n and m, using recursion
