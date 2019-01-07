@@ -11,20 +11,13 @@ package algorithms.basicmath;
 public class Recursion {
 
     public static long factorial(int n) {
-
         if (n >= 2) {
-            long l = n * factorial(n - 1);
-            return l;
+            return n * factorial(n - 1);
         }
         return 1;
     }
 
-    public static void main(String[] args) {
-        System.out.println(fibonacci(8));
-    }
-
     public static long fibonacci(long n) {
-        System.out.println(n);
         if (n < 2) {
             return n;
         }
@@ -32,11 +25,7 @@ public class Recursion {
     }
 
     public static int lowestCommonDivisor(int firstNumber, int secondNumber) {
-
-        if (secondNumber == 2) {
-            return firstNumber;
-        } else
-            return (firstNumber*secondNumber)/(greatestCommonDivisor(secondNumber,secondNumber));
+        return (firstNumber * secondNumber) / (greatestCommonDivisor(firstNumber, secondNumber));
     }
 
     public static int greatestCommonDivisor(int firstNumber, int secondNumber) {
