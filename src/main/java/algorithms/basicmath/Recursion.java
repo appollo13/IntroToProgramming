@@ -12,37 +12,37 @@ public class Recursion {
 
     public static long factorial(int n) {
 
-
         if (n >= 2) {
             long l = n * factorial(n - 1);
-            System.out.println(l);
             return l;
         }
         return 1;
+    }
 
+    public static void main(String[] args) {
+        System.out.println(fibonacci(8));
     }
 
     public static long fibonacci(long n) {
-
-        long p = 0;
-        while (p < n){
-            long sum = p + fibonacci(n-p);
-            p++;
-
+        System.out.println(n);
+        if (n < 2) {
+            return n;
         }
-
-        return 0;
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
-
-
     public static int lowestCommonDivisor(int firstNumber, int secondNumber) {
-        //TODO
-        return -1;
+
+        if (secondNumber == 2) {
+            return firstNumber;
+        } else
+            return (firstNumber*secondNumber)/(greatestCommonDivisor(secondNumber,secondNumber));
     }
 
     public static int greatestCommonDivisor(int firstNumber, int secondNumber) {
-        //TODO
-        return -1;
+        if (secondNumber == 0) {
+            return firstNumber;
+        } else
+            return greatestCommonDivisor(secondNumber, firstNumber % secondNumber);
     }
 }
