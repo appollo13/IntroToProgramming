@@ -4,26 +4,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import static algorithms.basicmath.Basics.*;
+import static algorithms.basicmath.Recursion.*;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(JUnit4.class)
-public class BasicTest {
-
-    @Test
-    public void countNumberOfDigits_with1234_then4() {
-        assertEquals(4, countNumberOfDigits(1234));
-    }
-
-    @Test
-    public void countNumberOfDigits_with0_then1() {
-        assertEquals(1, countNumberOfDigits(0));
-    }
-
-    @Test
-    public void countNumberOfDigits_withMinus12_then2() {
-        assertEquals(2, countNumberOfDigits(-12));
-    }
+public class RecursionTest {
 
     @Test
     public void factorial_from0_then1() {
@@ -43,6 +28,36 @@ public class BasicTest {
     @Test
     public void factorial_from17_thenALong() {
         assertEquals(355687428096000L, factorial(17));
+    }
+
+    @Test
+    public void fibonacci_from0_then0() {
+        assertEquals(0, fibonacci(0));
+    }
+
+    @Test
+    public void fibonacci_from1_then1() {
+        assertEquals(1, fibonacci(1));
+    }
+
+    @Test
+    public void fibonacci_from2_then1() {
+        assertEquals(1, fibonacci(2));
+    }
+
+    @Test
+    public void fibonacci_from3_then2() {
+        assertEquals(2, fibonacci(3));
+    }
+
+    @Test
+    public void fibonacci_from10_then55() {
+        assertEquals(55, fibonacci(10));
+    }
+
+    @Test
+    public void fibonacci_from13_then233() {
+        assertEquals(233, fibonacci(13));
     }
 
     @Test
